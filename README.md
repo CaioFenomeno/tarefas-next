@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Tarefas Next
 
-## Getting Started
+Aplicação simples de tarefas desenvolvida com **Next.js 15** e **TypeScript**, usando **App Router**.  
+Permite adicionar novas tarefas e mostra o número total de tarefas usando um **hook customizado** (`useContadorDeTarefas`).  
+O projeto inclui **testes unitários** com Jest e React Testing Library.
 
-First, run the development server:
+---
 
+## 🚀 Como rodar o projeto
+
+### 1️⃣ Instalar dependências
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Rodar o servidor de desenvolvimento
+```bash
+npm run dev
+```
+Abra [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 Testes
 
-## Learn More
+Os testes verificam:
+- O comportamento do **hook** (`useContadorDeTarefas`)
+- O funcionamento do **componente** (`NovaTarefa`)
+- A renderização da **página principal**
 
-To learn more about Next.js, take a look at the following resources:
+### Rodar todos os testes:
+```bash
+npm test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Rodar em modo observação:
+```bash
+npm run test:watch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Gerar relatório de cobertura:
+```bash
+npm run test:coverage
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Scripts disponíveis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Comando | Descrição |
+|----------|------------|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera o build de produção |
+| `npm start` | Inicia o servidor em modo produção |
+| `npm test` | Executa os testes unitários |
+| `npm run test:watch` | Executa testes observando mudanças |
+| `npm run test:coverage` | Exibe relatório de cobertura dos testes |
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+app/
+ ├── components/
+ │    └── NovaTarefa.tsx       # Componente Client que adiciona tarefas
+ ├── hooks/
+ │    └── useContadorDeTarefas.ts  # Hook customizado para contar tarefas
+ ├── page.tsx                  # Server Component principal
+ └── tarefasSimuladas.ts       # Simulação de dados
+__tests__/
+ ├── useContadorDeTarefas.test.ts
+ ├── NovaTarefa.test.tsx
+ └── page.test.tsx
+```
+
+---
+
+## 🧠 Tecnologias utilizadas
+- **Next.js 15 (App Router)**
+- **React 19**
+- **TypeScript**
+- **Jest**
+- **React Testing Library**
+
+---
+
+## ✅ Requisitos atendidos
+✔ Estrutura de App Router com Server/Client Components  
+✔ Hook customizado com TypeScript  
+✔ Testes unitários do hook e da interface  
+✔ Scripts configurados no `package.json`  
+✔ Documentação completa de execução e testes  
+
+---
+
+## 💡 Observação
+Este projeto foi desenvolvido para fins de estudo e avaliação, com foco em boas práticas de componentização, hooks e testes unitários em aplicações React com Next.js.
