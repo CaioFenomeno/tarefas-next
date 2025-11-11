@@ -18,7 +18,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
+
+      - name: Limpar cache do npm
+        run: npm cache clean --force
+    
       - name: Instalação das dependências
         run: npm ci
       
@@ -30,3 +33,7 @@ jobs:
         
       - name: Rodar testes
         run: npm run test
+
+      - name: Limpar cache do npm
+        run: npm cache clean --force
+
