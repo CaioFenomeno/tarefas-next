@@ -20,10 +20,13 @@ jobs:
           node-version: '20'
           
       - name: Instalação das dependências
-        run: npm install
+        run: npm ci
       
       - name: Rodar o build
         run: npm run build
 
       - name: Rodar o lint
         run: npm run lint
+        
+      - name: Rodar testes
+      - run: npm run test
