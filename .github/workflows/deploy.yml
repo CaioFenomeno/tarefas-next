@@ -1,0 +1,29 @@
+name: Deploy para Vercel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # permite rodar manualmente no GitHub
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Build do projeto
+        run: npm run build
+
+      - name: Deploy na Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
