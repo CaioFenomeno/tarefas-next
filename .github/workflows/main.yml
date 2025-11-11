@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '20'
           
-      - name: Intalação das depêndecias
+      - name: Instalação das dependências
         run: npm install
       
       - name: Rodar o build
