@@ -18,12 +18,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Limpar cache do npm
-        run: npm cache clean --force
     
       - name: Instalação das dependências
         run: npm ci
+        
+      - name: Instalar ts-node e typescript
+        run: npm install --save-dev ts-node typescript  
       
       - name: Rodar o build
         run: npm run build
