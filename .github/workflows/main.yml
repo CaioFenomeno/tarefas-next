@@ -24,3 +24,6 @@ jobs:
       
       - name: Rodar o build
         run: npm run build
+
+      - name: Rodar o lint
+        run: npm run lint
